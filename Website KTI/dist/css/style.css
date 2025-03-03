@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin-inline: auto;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: 80%;
+  }
+}
+
+/* Header */
+header {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(#00004c2a, #00004c2a),
+    url(../../assets/images/meraihimpian11.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ffffff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px 20px 0px;
+}
+
+.navbar .menu {
+  display: flex;
+  gap: 41px;
+  margin-block-start: 10px;
+}
+
+.navbar .menu > h1,
+.navbar .menu > h3 {
+  display: none;
+}
+
+.navbar .menu li {
+  list-style-type: none;
+  margin-block-start: -10px;
+}
+
+.navbar .menu li i {
+  display: none;
+}
+
+.navbar .menu li a {
+  color: rgb(249 255 249 / 82%);
+  text-decoration: none;
+}
+
+.navbar .contact-btn {
+  padding: 12px 24px 12px 24px;
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid rgb(200 200 200 / 60%);
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -max-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  position: relative;
+  left: 13px;
+}
+
+.navbar .contact-btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(255 255 255 / 15%);
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -max-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.navbar .contact-btn:hover::before {
+  background-color: rgb(60 190 75 / 25%);
+}
+
+.navbar .hamburger {
+  display: none;
+  padding-right: 11px;
+}
+
+.navbar .hamburger-inner,
+.navbar .hamburger-inner::before,
+.navbar .hamburger-inner::after {
+  background-color: #ffffff;
+}
+
+.navbar .hamburger.is-active .hamburger-inner,
+.navbar .hamburger.is-active .hamburger-inner::before,
+.navbar.hamburger.is-active .navbar .hamburger-inner::after {
+  background-color: white;
+}
+
+.hero {
+  margin-top: 100px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 14px;
+  max-width: 400px;
+  margin-bottom: 20px;
+  line-height: 2;
+}
+
+.hero button {
+  padding: 12px 24px 12px 24px;
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -max-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  position: relative;
+}
+
+.hero button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(255 255 255 / 15%);
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -max-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.hero button:hover::before {
+  background-color: rgb(60 190 75 / 25%);
+}
+
+@media screen and(max-width: 1070px) {
+  .navbar .menu {
+    gap: 50px;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .navbar .menu {
+    position: absolute;
+    top: -10px;
+    left: -100%;
+    flex-direction: column;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    opacity: 0;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    filter: drop-shadow(11px 4px 8px black);
+  }
+
+  .navbar .menu.menu-active {
+    left: 0;
+    opacity: 1;
+  }
+
+  .navbar .menu li a {
+    color: black;
+  }
+
+  .navbar .menu > h1 {
+    display: block;
+    color: black;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.4);
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
+  .navbar .menu > h3 {
+    display: block;
+    color: gray;
+    padding-left: 10px;
+    margin-block-start: -24px;
+  }
+
+  .navbar .menu li i {
+    display: inline-block;
+    color: black;
+    font-size: 20px;
+    width: 50px;
+    text-align: right;
+    margin-right: 10px;
+  }
+
+  .navbar .hamburger {
+    display: inline-block;
+  }
+
+  .navbar .contact {
+    display: flex;
+    align-items: center;
+    padding: 20px, 0, 20px, 0;
+    gap: 10px;
+  }
+}
+
+@media screen and(max-width: 712px) {
+  .hero h1 {
+    font-size: 40px;
+    font-weight: 300;
+  }
+}
+/* Header */
+
+/* News */
+.news {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background-color: ;
+}
+
+.news .container > h1,
+.news .container > p {
+  text-align: center;
+}
+
+.news .container > h1 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.news .swiper {
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.news .swiper .swiper-slide img {
+  width: 100%;
+  height: 200px;
+}
+
+.news .swiper .news-desc {
+  margin-top: 20px;
+}
+
+.news .swiper .news-desc p {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgb(0, 0, 0, 0.6);
+  margin-bottom: 7px;
+}
+
+.news .swiper .news-desc h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 2px;
+}
+
+.news .swiper .news-desc h4 {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(0, 0, 0, 0.7);
+  margin-bottom: 60px;
+}
+
+/* News */
