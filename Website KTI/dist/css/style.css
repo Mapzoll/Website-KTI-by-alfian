@@ -28,13 +28,47 @@ header {
   background-position: center;
   color: #ffffff;
   position: relative;
+  top: 16px;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0px 20px 0px;
+  padding: 20px 20px 20px 20px;
+  margin: 0px 0px 0px 0px;
+  border-bottom: 4px solid rgb(255 255 255 / 80%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(1, 1, 1, 0.9);
+}
+
+.navbar .logo {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar .logo h1::after {
+  content: "";
+  display: block;
+  padding-bottom: 1px;
+  border-bottom: 4px solid white;
+  transform: scaleX(0);
+  transition: transform 0.4s ease-out;
+}
+
+.navbar .logo h1:hover {
+  color: #ffffff;
+}
+
+.navbar .logo h1:hover::after {
+  transform: scaleX(0.96);
 }
 
 .navbar .menu {
@@ -53,31 +87,48 @@ header {
   margin-block-start: -10px;
 }
 
+.navbar .menu a::after {
+  content: "";
+  display: block;
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+  transform: scaleX(0);
+  transition: transform 0.4s ease-out;
+}
+
+.navbar .menu a:hover {
+  color: #ffffff;
+}
+
+.navbar .menu a:hover::after {
+  transform: scaleX(0.6);
+}
+
 .navbar .menu li i {
   display: none;
 }
 
 .navbar .menu li a {
-  color: rgb(249 255 249 / 82%);
+  color: rgb(213 213 213 / 90%);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .navbar .contact-btn {
-  padding: 12px 24px 12px 24px;
+  padding: 10px 20px 10px 20px;
   background-color: transparent;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: thin;
   cursor: pointer;
-  border: 1px solid rgb(200 200 200 / 60%);
+  border: 1px solid rgb(255 255 255 / 60%);
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -max-border-radius: 100px;
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
   position: relative;
-  left: 13px;
-  top: 2px;
+  left: -51px;
+  top: -3px;
 }
 
 .navbar .contact-btn::before {
@@ -88,7 +139,7 @@ header {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(255 255 255 / 15%);
+  background-color: rgb(255 255 255 / 10%);
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -max-border-radius: 100px;
@@ -103,13 +154,15 @@ header {
 }
 
 .navbar .contact-btn:hover::before {
-  background-color: rgb(255 240 120 / 25%);
+  background-color: rgb(10 120 10 / 25%);
+  transition: background-color 1.6s, transform 0.7s;
 }
 
 .navbar .hamburger {
   display: none;
   padding-right: 11px;
-  padding-top: 5px;
+  padding-top: 0px;
+  padding-bottom: 3px;
 }
 
 .navbar .hamburger-inner,
@@ -126,7 +179,7 @@ header {
 
 .hero {
   margin-top: 80px;
-  padding: 0 20px 0 20px;
+  padding: 170px 20px 30px 20px;
 }
 
 .hero h1 {
@@ -144,12 +197,12 @@ header {
 }
 
 .hero button {
-  padding: 12px 24px 12px 24px;
+  padding: 15px 30px 15px 30px;
   background-color: transparent;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: thin;
   cursor: pointer;
-  border: 1px solid rgb(255 255 255 / 60%);
+  border: 2px solid rgb(255 255 255 / 50%);
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -max-border-radius: 100px;
@@ -181,7 +234,8 @@ header {
 }
 
 .hero button:hover::before {
-  background-color: rgb(255 240 120 / 25%);
+  background-color: rgb(10 120 10 / 25%);
+  transition: background-color 1.6s, transform 0.7s;
 }
 
 @media screen and(max-width: 1070px) {
@@ -223,7 +277,8 @@ header {
   }
 
   .navbar .menu li a {
-    color: black;
+    color: rgb(0, 0, 0, 0.67);
+    font-weight: 600;
   }
 
   .navbar .menu > h1 {
@@ -233,6 +288,24 @@ header {
     padding-bottom: 10px;
     padding-left: 10px;
     padding-top: 10px;
+  }
+
+  .navbar .menu a::after {
+    content: "";
+    display: block;
+    padding-bottom: 1px;
+    border-bottom: 2px solid black;
+    transform: scaleX(0);
+    transition: transform 0.3s linear;
+    transform-origin: 33% 0;
+  }
+
+  .navbar .menu a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .navbar .menu a:hover {
+    color: #000000;
   }
 
   .navbar .menu > h3 {
